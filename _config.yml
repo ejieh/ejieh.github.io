@@ -26,6 +26,16 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
 github_username:  ejieh
 
+# Google Analytics
+google_analytics: UA—XXXXXXXX-X
+
+# Author
+author:
+  name:         Chux Ejieh
+  url:          https://chuxejieh.com
+  email:        ejiehc@gmail.com
+
+
 # Build settings
 #theme: minima
 plugins:
