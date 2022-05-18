@@ -1,15 +1,56 @@
-Contrary to what the title of this post says, I'm not going to tell a story but I want to draw your attention to the two data worlds prevalent in the tech space. I've just been into [Charles Dickens writings](https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities) of late, hence the title. In conversations with people who want to start analytics in their business and other data professionals, I notice they are not aware of the two different data worlds - transactional data and analytical data. For those who are aware, they are often confused or struggle to see why both data worlds exist. So let's dive into this particular type of data chasm and shed some light on why these two data worlds exist.
+Contrary to what the title of this post says, I'm not going to tell a story but I want to draw your attention to the two data worlds prevalent in the tech space. I've just been into [Charles Dickens writings](https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities) of late, hence the title. In conversations with people who want to start analytics in their business and other data professionals, I notice some are not aware of the two different data worlds - transactional data and analytical data. For those who are aware, they are often confused or struggle to see why both data worlds exist. So let's dive into this particular type of data chasm and shed some light on why these two data worlds exist.
 
  The database that sits behind your software application is a transactional database. On the other hand, the database where your analysts answer complex questions from and perform analysis from is an analytical database. All companies that use applications as part of their business process have the former while the later is often used by companies that want to be data-driven. This difference in these two data worlds is often reflected in the organisational structures and professions these days. They also have different architectures.
 
 To explain the difference, let's paint a scenario in which I own a hardware store. My store has an app that the customers log in to borrow tools and the app also processes payments. The database that sits at the back end of this customer app and stores every interaction the customer makes with the app is called the transactional database (also known as application or operational database). It enables the customer use the app by storing the current state of affairs and any other business rules of the store. A table in this database might look like this:
 
-| Booking Date      | Name       | City     | Tool Borrowed | Time of day | Amount | Returned on time |
-|-------------------|------------|----------|---------------|-------------|--------|------------------|
-| December 01, 2021 | John Doe   | Toronto  | Chainsaw      | Morning     | $450   | Yes              |
-| December 15, 2021 | Jane Doe   | Brampton | Wheel barrow  | Noon        | $60    | Yes              |
-| January 7, 2022   | Bill Smith | Hamilton | Sledge Hammer | Noon        | $300   |                  |
-| January 7, 2022   | Chris Lock | Toronto  | Helmet        | Evening     | $100   |                  |
+<table>
+    <tr>
+        <td>Booking Date</td>
+        <td>Name</td>
+        <td>City</td>
+        <td>Tool Borrowed</td>
+        <td>Time of day</td>
+        <td>Amount</td>
+        <td>Returned on time</td>
+    </tr>
+    <tr>
+        <td>December 01, 2021</td>
+        <td>John Doe</td>
+        <td>Toronto</td>
+        <td>Chainsaw</td>
+        <td>Morning</td>
+        <td>$450</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>December 15, 2021</td>
+        <td>Jane Doe</td>
+        <td>Brampton</td>
+        <td>Wheel barrow</td>
+        <td>Noon</td>
+        <td>$60</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>January 7, 2022</td>
+        <td>Bill Smith</td>
+        <td>Hamilton</td>
+        <td>Sledge Hammer</td>
+        <td>Noon</td>
+        <td>$300</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>January 7, 2022</td>
+        <td>Chris Lock</td>
+        <td>Toronto</td>
+        <td>Helmet</td>
+        <td>Evening</td>
+        <td>$100</td>
+        <td></td>
+    </tr>
+</table>
 
 In the transactional data world, the data in this table is read and written into by the customer app in a row-wise manner. So if John Doe logs in, he only sees the items pertaining to him and doesn't get to see Jane Doe's items. Also, this table should support concurrent multiple data writes so more than 1 customer can be using the app at the same time. In the example above, let's imagine Bill Smith borrowed the sledge hammer at the same time Chris Lock borrowed the helmet, the database should be able to store both records without any loss of data and in a timely manner so they both can get a response that their orders have been locked in. These type of operations on a database fall into the class of Online Transactional Processing (OLTP). Relational Database Managment Systems (RDBMS) have been optimised over the years to handle these type of workloads[^1]. Some common examples include Postgres, MySQL and SQL Server.
 
