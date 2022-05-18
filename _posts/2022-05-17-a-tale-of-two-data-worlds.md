@@ -6,12 +6,12 @@ In conversations with people who want to start analytics in their business and o
 
 To explain the difference, let's paint a scenario in which I own a hardware store. My store has an app that the customers log in to borrow tools and the app also processes payments. The database that sits at the back end of this customer app and stores every interaction the customer makes with the app is called the transactional database (also known as application or operational database). It enables the customer use the app by storing the current state of affairs and any other business rules of the store. A table in this database might look like this:
 
-| Booking Date      | Name       | City     | Tool Borrowed | Time of day | Amount | Returned on time |
-|-------------------|------------|----------|---------------|-------------|--------|------------------|
-| December 01, 2021 | John Doe   | Toronto  | Chainsaw      | Morning     | $450   | Yes              |
-| December 15, 2021 | Jane Doe   | Brampton | Wheel barrow  | Noon        | $60    | Yes              |
-| January 7, 2022   | Bill Smith | Hamilton | Sledge Hammer | Noon        | $300   |                  |
-| January 7, 2022   | Chris Lock | Toronto  | Helmet        | Evening     | $100   |                  |
+| **Date**        | **Name**   | **City** | **Tool**      | **Time** | **Amount** | **Returned** |
+|-----------------|------------|----------|---------------|----------|------------|--------------|
+| Dec. 01, 2021   | John Doe   | Toronto  | Chainsaw      | Morning  | $450       | Yes          |
+| Dec. 15, 2021   | Jane Doe   | Brampton | Wheel barrow  | Noon     | $60        | Yes          |
+| Jan. 7, 2022    | Bill Smith | Hamilton | Sledge Hammer | Noon     | $300       |              |
+| January 7, 2022 | Chris Lock | Toronto  | Helmet        | Evening  | $100       |              |
 
 In the transactional data world, the data in this table is read from and written into by the customer app in a row-wise manner. So if John Doe logs in, he only sees the items pertaining to him and doesn't get to see Jane Doe's items. Also, this table should support concurrent multiple data writes so more than 1 customer can be using the app at the same time. In the example above, let's imagine Bill Smith borrowed the sledge hammer at the same time Chris Lock borrowed the helmet, the database should be able to store both records without any loss of data and in a timely manner so they both can get a response that their orders have been locked in. These type of operations on a database fall into the class of Online Transactional Processing (OLTP). Relational Database Managment Systems (RDBMS) have been optimised over the years to handle these type of workloads[^1]. Some common examples include Postgres, MySQL and SQL Server.
 
