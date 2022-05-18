@@ -1,4 +1,8 @@
-﻿Contrary to what the title of this post says, I'm not going to tell a story but I want to draw your attention to the two data worlds prevalent in the tech space. I've just been into [Charles Dickens writings](https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities) of late, hence the title. 
+﻿---
+layout: post
+tags: data strategy
+---
+Contrary to what the title of this post says, I'm not going to tell a story but I want to draw your attention to the two data worlds prevalent in the tech space. I've just been into [Charles Dickens writings](https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities) of late, hence the title. 
 
 In conversations with people who want to start analytics in their business and other data professionals, I notice some are not aware of the two different data worlds - transactional data and analytical data. For those who are aware, they are often confused or struggle to see why both data worlds exist. So let's dive into this particular type of data chasm and shed some light on why these two data worlds exist.
 
