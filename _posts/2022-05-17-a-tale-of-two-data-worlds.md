@@ -6,53 +6,56 @@ In conversations with people who want to start analytics in their business and o
 
 To explain the difference, let's paint a scenario in which I own a hardware store. My store has an app that the customers log in to borrow tools and the app also processes payments. The database that sits at the back end of this customer app and stores every interaction the customer makes with the app is called the transactional database (also known as application or operational database). It enables the customer use the app by storing the current state of affairs and any other business rules of the store. A table in this database might look like this:
 
-<table>
-    <tr>
-        <td>Date</td>
-        <td>Name</td>
-        <td>City</td>
-        <td>Tool</td>
-        <td>Time</td>
-        <td>Amount</td>
-        <td>Returned</td>
-    </tr>
-    <tr>
-        <td>Dec. 01, 2021</td>
-        <td>John Doe</td>
-        <td>Toronto</td>
-        <td>Chainsaw</td>
-        <td>Morning</td>
-        <td>$450</td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td>Dec. 15, 2021</td>
-        <td>Jane Doe</td>
-        <td>Brampton</td>
-        <td>Wheel barrow</td>
-        <td>Noon</td>
-        <td>$60</td>
-        <td>Yes</td>
-    </tr>
-    <tr>
-        <td>Jan. 7, 2022</td>
-        <td>Bill Smith</td>
-        <td>Hamilton</td>
-        <td>Sledge Hammer</td>
-        <td>Noon</td>
-        <td>$300</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>January 7, 2022</td>
-        <td>Chris Lock</td>
-        <td>Toronto</td>
-        <td>Helmet</td>
-        <td>Evening</td>
-        <td>$100</td>
-        <td></td>
-    </tr>
-</table>
+<div class="divTable">
+    <div class="thead">
+        <div class="row">
+            <div class="cell">Date</td>
+            <div class="cell">Name</td>
+            <div class="cell">City</td>
+            <div class="cell">Tool</td>
+            <div class="cell">Time</td>
+            <div class="cell">Amount</td>
+            <div class="cell">Returned</td>
+        </div>
+    </div>
+    <div class="tbody">
+        <div class="row">
+            <div class="cell">Dec. 01, 2021</td>
+            <div class="cell">John Doe</td>
+            <div class="cell">Toronto</td>
+            <div class="cell">Chainsaw</td>
+            <div class="cell">Morning</td>
+            <div class="cell">$450</td>
+            <div class="cell">Yes</td>
+        </div>
+        <div class="row">
+            <div class="cell">Dec. 15, 2021</td>
+            <div class="cell">Jane Doe</td>
+            <div class="cell">Brampton</td>
+            <div class="cell">Wheel barrow</td>
+            <div class="cell">Noon</td>
+            <div class="cell">$60</td>
+            <div class="cell">Yes</td>
+        </div>
+        <div class="row">
+            <div class="cell">Jan. 7, 2022</td>
+            <div class="cell">Bill Smith</td>
+            <div class="cell">Hamilton</td>
+            <div class="cell">Sledge Hammer</td>
+            <div class="cell">Noon</td>
+            <div class="cell">$300</td>
+        </div>
+        <div class="row">
+            <div class="cell">Jan. 7, 2022</td>
+            <div class="cell">Chris Lock</td>
+            <div class="cell">Toronto</td>
+            <div class="cell">Helmet</td>
+            <div class="cell">Evening</td>
+            <div class="cell">$100</td>
+        </div>
+    </div>
+</div>
+
 
 In the transactional data world, the data in this table is read from and written into by the customer app in a row-wise manner. So if John Doe logs in, he only sees the items pertaining to him and doesn't get to see Jane Doe's items. Also, this table should support concurrent multiple data writes so more than 1 customer can be using the app at the same time. In the example above, let's imagine Bill Smith borrowed the sledge hammer at the same time Chris Lock borrowed the helmet, the database should be able to store both records without any loss of data and in a timely manner so they both can get a response that their orders have been locked in. These type of operations on a database fall into the class of Online Transactional Processing (OLTP). Relational Database Managment Systems (RDBMS) have been optimised over the years to handle these type of workloads[^1]. Some common examples include Postgres, MySQL and SQL Server.
 
