@@ -1,6 +1,6 @@
 ﻿---
 layout: post
-tags: data
+tags: data-architecture
 ---
 Contrary to what the title of this post says, I'm not going to tell a story but I want to draw your attention to the two data worlds prevalent in the tech space. I've just been into [Charles Dickens writings](https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities) of late, hence the title. 
 
