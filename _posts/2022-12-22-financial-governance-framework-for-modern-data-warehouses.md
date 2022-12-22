@@ -3,9 +3,7 @@ layout: post
 tags: data-warehouse
 ---
 
-The growth of cloud adoption in the data world has been rising over the past few years. This increase in adoption of the cloud for data warehousing has increased productivity, reduced capital expenditure and driven innovation. 
-
-Modern data warehouses run on the cloud. Most times, they have consumption based pricing model. Basically, some credits are pre-purchased, and those credits are spent over time based on consumption. These data warehouses are often usually composed of storage and compute with the later being the major driver of cost. These costs tend to get out of hand over time as the business evolves. 
+Most modern data warehouses run on the cloud and often times, they have consumption based pricing model. Basically, some credits are pre-purchased and those credits are spent over time based on consumption. These data warehouses are often usually composed of storage and compute with the later being the major driver of cost. These costs tend to get out of hand over time as the business evolves. 
  
 This phenomenon of runaway cloud costs is not just unique to modern data warehouses but other cloud platforms. In a recent survey from [Wanclouds](https://venturebeat.com/data-infrastructure/report-81-of-it-teams-directed-to-reduce-or-halt-cloud-spending-by-c-suite/), 4 in 5 IT leaders say they have been directed to reduce or take on no additional cloud spending. As rising costs and inflation soar, IT leaders have been tasked with keeping a tight watch on cloud costs. Consequently, a new discipline  of financial governance has emerged to manage the cost of running services on the cloud. 
 
@@ -13,7 +11,8 @@ The major goal of financial governance is to get a grip of cloud costs. It also 
 
 Below is a framework to get started on rolling out financial governance for your modern data warehouse. Kindly note, this can be extended to any cloud platform that is consumption based.
 
-![financial_governance_2.png](../../../../Downloads/financial_governance_2.png)
+![Image not found: /assets/img/financial_governance_2.png](/assets/img/financial_governance_2.png "Image not found: /assets/img/financial_governance_2.png")
+
 Fig. 1: Framework for Financial Governance
 
 The framework shows the major components of financial governance. It is an iterative process that starts with monitoring cloud costs, controlling it and then optimizing it. Using the modern data warehouses, these 3 components are discussed in more details below
