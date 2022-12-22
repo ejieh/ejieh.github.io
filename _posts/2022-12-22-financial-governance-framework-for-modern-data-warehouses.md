@@ -11,9 +11,8 @@ The major goal of financial governance is to get a grip of cloud costs. It also 
 
 Below is a framework to get started on rolling out financial governance for your modern data warehouse. Kindly note, this can be extended to any cloud platform that is consumption based.
 
-![Image not found: /assets/img/financial_governance_2.png](/assets/img/financial_governance_2.png "Image not found: /assets/img/financial_governance_2.png")
+![Alt Text](/assets/img/financial_governance_2.png "Fig. 1: Framework for Financial Governance")
 
-Fig. 1: Framework for Financial Governance
 
 The framework shows the major components of financial governance. It is an iterative process that starts with monitoring cloud costs, controlling it and then optimizing it. Using the modern data warehouses, these 3 components are discussed in more details below
 
