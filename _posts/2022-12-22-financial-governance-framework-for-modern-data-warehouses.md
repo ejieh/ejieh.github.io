@@ -41,7 +41,9 @@ The first step in optimizing costs is to identify and remove data processing wor
 Another way to optimize costs is to revisit the data architecture. If a lot of cold data is noticed in the data warehouse (data that is not being consumed by the business), a data lake can be brought into the architecture to take in these cold data. Furthermore, as part of revisiting the data architecture, you can review the cadence of the batch processing of data along with the business stakeholders. It's been shown that processing a big batch once is cheaper than processing multiple mini-batches multiple times. 
 
 Understanding the internals of your specific cloud data warehouse will help you write the queries in a way that optimizes for how the data warehouse was built. For example, here is a quote from the product documentation of Big Query:
-<!-- Applying a `LIMIT` clause to a `SELECT *` query does not affect the amount of data read. You are billed for reading all bytes in the entire table -->
+
+> Applying a `LIMIT` clause to a `SELECT *` query does not affect the amount of data read. You are billed for reading all bytes in the entire table
+
 This means that if I have a table of 10 million rows and I limit by 1 in my filter, I will be charged for reading 10 million rows using Big Query. 
 
 Understanding the internal workings of your specific data warehouses can't be overstated as it will help you with some common data warehouse performance optimization practices such as table schema optimization, data clustering, query plans examination and compute resources scale optimization. These help to reduce costs too.
